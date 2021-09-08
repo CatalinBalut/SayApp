@@ -24,7 +24,11 @@ sayNumbers = (number) => {
         return (number % 100 === 0 ? `${single_digits[Math.floor(number /100) % 10]} ${rest_of_digits[100]}`
         : `${single_digits[Math.floor(number /100) % 10]} ${rest_of_digits[100]} ${sayNumbers(number % 100 )}`);
         
-    } else if (number % 1000 === 0 && number <=999_999){
+    } else if (number <=999_999){
+        return (number %1000 === 0 ? 
+            `${single_digits[Math.floor(number /1000) % 10]} ${rest_of_digits[1000]}` 
+            : `${single_digits[Math.floor(number /1000) % 10]} ${rest_of_digits[1000]} ${sayNumbers(number % 1000 )}`);
+
         return `${single_digits[Math.floor(number /1000) % 10]} ${rest_of_digits[1000]}`
     } else if(number % 1_000_000 === 0 && number <=999_999_999){
         return `one million`
