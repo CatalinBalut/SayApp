@@ -15,9 +15,9 @@ const rest_of_digits = {
 };
 
 function digitCount(num) {
-    if(num === 0 ) return 1
+    if (num === 0) return 1
     return Math.floor(Math.log10(Math.abs(num))) + 1
-  }
+}
 
 sayNumbers = (number) => {
     switch (digitCount(number)) {
@@ -37,25 +37,27 @@ sayNumbers = (number) => {
         case 5:
             return (number % 10_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1000) % 100)} ${rest_of_digits[1000]}`
-                :`${sayNumbers(Math.floor(number / 1000) % 100)} ${rest_of_digits[1000]} ${sayNumbers(number % 1000)}`);
+                : `${sayNumbers(Math.floor(number / 1000) % 100)} ${rest_of_digits[1000]} ${sayNumbers(number % 1000)}`);
         case 6:
             return (number % 100_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1000) % 1000)} ${rest_of_digits[1000]}`
-                :`${sayNumbers(Math.floor(number / 1000) % 1000)} ${rest_of_digits[1000]} ${sayNumbers(number % 1000)}`);
+                : `${sayNumbers(Math.floor(number / 1000) % 1000)} ${rest_of_digits[1000]} ${sayNumbers(number % 1000)}`);
         case 7: //1_000_000
-        return (number % 1_000_000 === 0 ?
-            `${sayNumbers(Math.floor(number / 1_000_000) % 1_000_000)} ${rest_of_digits[1_000_000]}`
-            :`${sayNumbers(Math.floor(number / 1_000_000) % 1_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
+            return (number % 1_000_000 === 0 ?
+                `${sayNumbers(Math.floor(number / 1_000_000) % 1_000_000)} ${rest_of_digits[1_000_000]}`
+                : `${sayNumbers(Math.floor(number / 1_000_000) % 1_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
         case 8:
             return (number % 10_000_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1_000_000) % 10_000_000)} ${rest_of_digits[1_000_000]}`
-                :`${sayNumbers(Math.floor(number / 1_000_000) % 10_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
+                : `${sayNumbers(Math.floor(number / 1_000_000) % 10_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
         case 9:
             return (number % 100_000_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1_000_000) % 100_000_000)} ${rest_of_digits[1_000_000]}`
-                :`${sayNumbers(Math.floor(number / 1_000_000) % 100_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
-        case 10:
-            return `one billion`
+                : `${sayNumbers(Math.floor(number / 1_000_000) % 100_000_000)} ${rest_of_digits[1_000_000]} ${sayNumbers(number % 1_000_000)}`);
+        case 10: //one billion
+            return (number % 1_000_000_000 === 0 ?
+                `${sayNumbers(Math.floor(number / 1_000_000_000) % 1_000_000_000)} ${rest_of_digits[1_000_000_000]}`
+                : `${sayNumbers(Math.floor(number / 1_000_000_000) % 1_100_000_000)} ${rest_of_digits[1_000_000_000]} ${sayNumbers(number % 1_000_000_000)}`);
         case 11:
             return false
         case 12:
