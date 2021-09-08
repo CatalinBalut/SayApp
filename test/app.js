@@ -11,7 +11,7 @@ describe("ALL TESTS", () => {
         expect(sayNumbers(19)).to.be.equal("nineteen")
     })
     it("Expect to be 80", () => {
-        expect(sayNumbers(80)).to.be.equal("eighty")
+        expect(sayNumbers(80)).to.be.equal("eighty ")
     })
     it("Expect to be 87", () => {
         expect(sayNumbers(87)).to.be.equal("eighty seven")
@@ -37,4 +37,14 @@ describe("ALL TESTS", () => {
     it("Expect to be 1 000 000 000 000", () => {
         expect(sayNumbers(1_000_000_000_000)).to.be.equal("one trillion")
     })
+    it("Expect to be 183", () => {
+        expect(sayNumbers(183)).to.be.equal("one hundred eighty three")
+    })
+    it("Expect to be 222", () => {
+        expect(sayNumbers(222)).to.be.equal("two hundred twenty two")
+    })
+    it("Expect to be 1183", () => {
+        expect(sayNumbers(1183)).to.be.equal("one thousand one hundred eighty three")
+    })
+    
 })
