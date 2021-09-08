@@ -10,7 +10,8 @@ const rest_of_digits = {20:"twenty", 30:"thirty", 40:"forty", 50:"fifty",
 sayNumbers = (number) =>{
     if(number >= 0 && number <= 9) return single_digits[number]
     else if(number<=19) return zero_nineteen_numbers[number]
-    else if(number<=90) return rest_of_digits[number]
+    else if(number<=90 && number%10===0) return rest_of_digits[number]
+    else if(number<=99) return `${rest_of_digits[number-number%10]} ${single_digits[number%10]}`
 }
 
 module.exports = sayNumbers

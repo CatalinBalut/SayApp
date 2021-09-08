@@ -13,4 +13,7 @@ describe("ALL TESTS", () => {
     it("Expect to be 80", ()=>{
         expect(sayNumbers(80)).to.be.equal("eighty")
     })
+    it("Expect to be 87", ()=>{
+        expect(sayNumbers(87)).to.be.equal("eighty seven")
+    })
 })
