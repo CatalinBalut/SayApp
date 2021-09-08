@@ -1,0 +1,24 @@
+{
+  "name": "sayapp",
+  "version": "1.0.0",
+  "description": "Write a function to return the natural language pronunciation (string representation) for integers ranging from 0 to 999,999,999,999,999,999. ​ Examples: 0 => zero 1 => one 11 => eleven 21 => twenty-one 101 => one hundred and one 115 => one hundred fifteen 221 => two hundred twenty-one 1005 => one thousand and five 184 => one hundred eighty-four 21235 => twenty-one thousand two hundred thirty-five 1_000_001 => one million and one ​ Limit thousands groups to million, billion, trillion. ​ Any values outside the given integers range and invalid types will cause an exception to be thrown.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatalinBalut/sayapp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CatalinBalut/sayapp/issues"
+  },
+  "homepage": "https://github.com/CatalinBalut/sayapp#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
+  }
+}
