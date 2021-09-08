@@ -21,8 +21,10 @@ sayNumbers = (number) => {
         return rest_of_digits[number]
     } else if (number <= 99) {
         return `${rest_of_digits[number - number % 10]} ${single_digits[number % 10]}`
-    } else if(number % 100 === 0 ){
+    } else if(number % 100 === 0  && number<=999){
         return `${single_digits[Math.floor(number /100) % 10]} ${rest_of_digits[100]}`
+    } else if (number % 1000 === 0){
+        return `${single_digits[Math.floor(number /1000) % 10]} ${rest_of_digits[1000]}`
     }
 }
 
