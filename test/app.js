@@ -10,4 +10,7 @@ describe("ALL TESTS", () => {
     it("Expect to be 19", ()=>{
         expect(sayNumbers(19)).to.be.equal("nineteen")
     })
+    it("Expect to be 80", ()=>{
+        expect(sayNumbers(80)).to.be.equal("eighty")
+    })
 })
