@@ -57,11 +57,15 @@ sayNumbers = (number) => {
         case 10: //one billion
             return (number % 1_000_000_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1_000_000_000) % 1_000_000_000)} ${rest_of_digits[1_000_000_000]}`
-                : `${sayNumbers(Math.floor(number / 1_000_000_000) % 1_100_000_000)} ${rest_of_digits[1_000_000_000]} ${sayNumbers(number % 1_000_000_000)}`);
+                : `${sayNumbers(Math.floor(number / 1_000_000_000) % 1_000_000_000)} ${rest_of_digits[1_000_000_000]} ${sayNumbers(number % 1_000_000_000)}`);
         case 11:
-            return false
+            return (number % 1_000_000_000 === 0 ?
+                `${sayNumbers(Math.floor(number / 1_000_000_000) % 10_000_000_000)} ${rest_of_digits[1_000_000_000]}`
+                : `${sayNumbers(Math.floor(number / 1_000_000_000) % 10_000_000_000)} ${rest_of_digits[1_000_000_000]} ${sayNumbers(number % 1_000_000_000)}`);
         case 12:
-            return false
+            return (number % 1_000_000_000 === 0 ?
+                `${sayNumbers(Math.floor(number / 1_000_000_000) % 100_000_000_000)} ${rest_of_digits[1_000_000_000]}`
+                : `${sayNumbers(Math.floor(number / 1_000_000_000) % 100_000_000_000)} ${rest_of_digits[1_000_000_000]} ${sayNumbers(number % 1_000_000_000)}`);
         case 13:
             return `one trillion`
         case 14:

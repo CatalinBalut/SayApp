@@ -73,4 +73,10 @@ describe("ALL TESTS", () => {
     it("Expect to be 8 999 999 999", () => {
         expect(sayNumbers(8_999_999_999)).to.be.equal("eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
+    it("Expect to be 88 999 999 999", () => {
+        expect(sayNumbers(88_999_999_999)).to.be.equal("eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    })
+    it("Expect to be 888 999 999 999", () => {
+        expect(sayNumbers(888_999_999_999)).to.be.equal("eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    })
 })
