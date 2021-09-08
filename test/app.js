@@ -28,4 +28,13 @@ describe("ALL TESTS", () => {
     it("Expect to be 6000", () => {
         expect(sayNumbers(6000)).to.be.equal("six thousand")
     })
+    it("Expect to be 1 000 000", () => {
+        expect(sayNumbers(1_000_000)).to.be.equal("one million")
+    })
+    it("Expect to be 1 000 000 000", () => {
+        expect(sayNumbers(1_000_000_000)).to.be.equal("one billion")
+    })
+    it("Expect to be 1 000 000 000 000", () => {
+        expect(sayNumbers(1_000_000_000_000)).to.be.equal("one trillion")
+    })
 })

@@ -23,8 +23,14 @@ sayNumbers = (number) => {
         return `${rest_of_digits[number - number % 10]} ${single_digits[number % 10]}`
     } else if(number % 100 === 0  && number<=999){
         return `${single_digits[Math.floor(number /100) % 10]} ${rest_of_digits[100]}`
-    } else if (number % 1000 === 0){
+    } else if (number % 1000 === 0 && number <=999_999){
         return `${single_digits[Math.floor(number /1000) % 10]} ${rest_of_digits[1000]}`
+    } else if(number % 1_000_000 === 0 && number <=999_999_999){
+        return `one million`
+    }else if (number % 1_000_000_000 === 0 && number <=999_999_999_999){
+        return `one billion`
+    }else if (number % 1_000_000_000_000 === 0 && number <=999_999_999_999_999){
+        return `one trillion`
     }
 }
 
