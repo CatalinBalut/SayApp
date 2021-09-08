@@ -52,6 +52,7 @@ describe("ALL TESTS", () => {
     it("Expect to be 10 000", () => {
         expect(sayNumbers(10_000)).to.be.equal("ten thousand")
     })
+
     it("Expect to be 99 999", () => {
         expect(sayNumbers(99_999)).to.be.equal("ninety nine thousand nine hundred ninety nine")
     })
@@ -61,6 +62,7 @@ describe("ALL TESTS", () => {
     it("Expect to be 9 999 999", () => {
         expect(sayNumbers(9_999_999)).to.be.equal("nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
+
     it("Expect to be 99 183 183", () => {
         expect(sayNumbers(99_183_183)).to.be.equal("ninety nine million one hundred eighty three thousand one hundred eighty three")
     })
@@ -70,6 +72,7 @@ describe("ALL TESTS", () => {
     it("Expect to be 1 000 000 000", () => {
         expect(sayNumbers(1_000_000_000)).to.be.equal("one billion")
     })
+
     it("Expect to be 8 999 999 999", () => {
         expect(sayNumbers(8_999_999_999)).to.be.equal("eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
@@ -79,4 +82,15 @@ describe("ALL TESTS", () => {
     it("Expect to be 888 999 999 999", () => {
         expect(sayNumbers(888_999_999_999)).to.be.equal("eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
+
+    it("Expect to be 1 888 999 999 999", () => {
+        expect(sayNumbers(1_888_999_999_999)).to.be.equal("one trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    })
+    it("Expect to be 11 888 999 999 999", () => {
+        expect(sayNumbers(11_888_999_999_999)).to.be.equal("eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    })
+    it("Expect to be 111 888 999 999 999", () => {
+        expect(sayNumbers(111_888_999_999_999)).to.be.equal("one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    })
+    
 })
