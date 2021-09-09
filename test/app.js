@@ -1,5 +1,8 @@
 const { expect } = require("chai")
 const sayNumbers = require("../src/app")
+const BN = require('bn.js');
+
+
 describe("ALL TESTS", () => {
     it("Test the 0 case", () => {
         expect(sayNumbers(0)).to.be.equal("zero")
@@ -52,6 +55,12 @@ describe("ALL TESTS", () => {
     it("Expect to be 10 000", () => {
         expect(sayNumbers(10_000)).to.be.equal("ten thousand")
     })
+    it("Expect to be 80 000", () => {
+        expect(sayNumbers(80_000)).to.be.equal("eighty thousand")
+    })
+    it("Expect to be 87 000", () => {
+        expect(sayNumbers(87_000)).to.be.equal("eighty seven thousand")
+    })
 
     it("Expect to be 99 999", () => {
         expect(sayNumbers(99_999)).to.be.equal("ninety nine thousand nine hundred ninety nine")
@@ -93,8 +102,22 @@ describe("ALL TESTS", () => {
         expect(sayNumbers(111_888_999_999_999)).to.be.equal("one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
 
+    //USING WEB3 BIG NUMBER LIBRARY
+    it("Expect to be 100000000000000000", () => {
+        oneth_trillion = new BN('1000000000000000')
+        expect(sayNumbers(oneth_trillion)).to.be.equal("one thousand trillion")
+    })     
+    it("Expect to be 700000000000000000", () => {
+        oneth_trillion = new BN('7000000000000000')
+        expect(sayNumbers(oneth_trillion)).to.be.equal("seven thousand trillion")
+    })   
+    
+    it("Expect to be 7000000000000000000", () => {
+        seventyth_trillion = new BN('70000000000000000')
+        expect(sayNumbers(seventyth_trillion)).to.be.equal("seventy thousand trillion")
+    })  
     // it("Expect to be 1 111 888 999 999 999", () => {
-    //     expect(sayNumbers(1_111_888_999_999_999)).to.be.equal("one thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    //     expect(sayNumbers(BN('1111888999999999'))).to.be.equal("one thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     // })
     // it("Expect to be 10 111 888 999 999 999", () => {
     //     expect(sayNumbers(10_111_888_999_999_999)).to.be.equal("ten thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
