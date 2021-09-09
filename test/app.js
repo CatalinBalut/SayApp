@@ -92,5 +92,30 @@ describe("ALL TESTS", () => {
     it("Expect to be 111 888 999 999 999", () => {
         expect(sayNumbers(111_888_999_999_999)).to.be.equal("one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     })
+
+    // it("Expect to be 1 111 888 999 999 999", () => {
+    //     expect(sayNumbers(1_111_888_999_999_999)).to.be.equal("one thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    // })
+    // it("Expect to be 10 111 888 999 999 999", () => {
+    //     expect(sayNumbers(10_111_888_999_999_999)).to.be.equal("ten thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
+    // })
+
+
+    ///105 105105 AND problem
+    it("Expect to be 103", () => {
+        expect(sayNumbers(103)).to.be.equal("one hundred and three")
+    })
+    it("Expect to be 103 103", () => {
+        expect(sayNumbers(103_103)).to.be.equal("one hundred and three thousand one hundred and three")
+    })
+    it("Expect to be 103 103 103", () => {
+        expect(sayNumbers(103_103_103)).to.be.equal("one hundred and three million one hundred and three thousand one hundred and three")
+    })
+    it("Expect to be 105 103 103 103", () => {
+        expect(sayNumbers(105_103_103_103)).to.be.equal("one hundred and five billion one hundred and three million one hundred and three thousand one hundred and three")
+    })
+    it("Expect to be 105 105 103 103 103", () => {
+        expect(sayNumbers(105_105_103_103_103)).to.be.equal("one hundred and five trillion one hundred and five billion one hundred and three million one hundred and three thousand one hundred and three")
+    })
     
 })
