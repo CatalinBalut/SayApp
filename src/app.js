@@ -28,9 +28,10 @@ sayNumbers = (number) => {
         switch (digitCount(number)) {
             case 1:
                 return (number === 0 ? `zero` : single_digits[number]);
-            case 2:
+            case 2://40 si 44 trebe tratat diferit cu inca un ternar
                 return (number <= 19 ? `${zero_nineteen_numbers[number]}`
-                    : `${rest_of_digits[number - number % 10]} ${single_digits[number % 10]}`);
+                    : (number % 10 === 0) ? `${rest_of_digits[number - number % 10]}`
+                        : `${rest_of_digits[number - number % 10]} ${single_digits[number % 10]}`)
             case 3:
                 return (number % 100 === 0 ? `${single_digits[Math.floor(number / 100) % 10]} ${rest_of_digits[100]}`
                     : (number % 100 - number % 10 === 0) ? `${single_digits[(number - number % 100) / 100]} ${rest_of_digits[100]} and ${single_digits[number % 10]}`
@@ -89,26 +90,29 @@ sayNumbers = (number) => {
         oneth_trillion = new BN('1000000000000000')
         onehu_trillion = new BN('100000000000000')
         one_trillion = new BN('1000000000000')
-        switch(digitCount(number)){
+        switch (digitCount(number)) {
             case 16: //1_000_000_000_000_000
-               return (number.mod(onehu_trillion).isZero()?
+                return (number.mod(onehu_trillion).isZero() ?
                     `${sayNumbers(number.div(one_trillion))} trillion`// ${sayNumbers(number.mod(onehu_trillion) - number.mod(onehu_trillion))}`
-                    : `aaa` );
-            case 17: 
-            return (number.mod(onehu_trillion).isZero()?
-            `${sayNumbers(number.div(one_trillion))} trillion`// ${sayNumbers(number.mod(onehu_trillion) - number.mod(onehu_trillion))}`
-            : `aaa` );
-            case 18: return false
+                    : `aaa`);
+            case 17:
+                return (number.mod(onehu_trillion).isZero() ?
+                    `${sayNumbers(number.div(one_trillion))} trillion`
+                    : `aaa`);
+            case 18:
+                return (number.mod(onehu_trillion).isZero() ?
+                    `${sayNumbers(number.div(one_trillion))} trillion`
+                    : `aaa`);
             default: return "chill dude"
         }
     }
 
-        // number - (number%  10**(length-1))        
-        //daca valoare depasste 1000 de trilioane facem string, despartim in 2 si scriem sutele de trilione apoi facem apel la fucntiee
-        //pt nr ce intraa in case
-        //nivelu de zeci sute si mii de trilioane
+    // number - (number%  10**(length-1))        
+    //daca valoare depasste 1000 de trilioane facem string, despartim in 2 si scriem sutele de trilione apoi facem apel la fucntiee
+    //pt nr ce intraa in case
+    //nivelu de zeci sute si mii de trilioane
 
-   
+
 }
 
 

@@ -14,7 +14,7 @@ describe("ALL TESTS", () => {
         expect(sayNumbers(19)).to.be.equal("nineteen")
     })
     it("Expect to be 80", () => {
-        expect(sayNumbers(80)).to.be.equal("eighty ")
+        expect(sayNumbers(80)).to.be.equal("eighty")
     })
     it("Expect to be 87", () => {
         expect(sayNumbers(87)).to.be.equal("eighty seven")
@@ -116,9 +116,10 @@ describe("ALL TESTS", () => {
         seventyth_trillion = new BN('70000000000000000')
         expect(sayNumbers(seventyth_trillion)).to.be.equal("seventy thousand trillion")
     })  
-    // it("Expect to be 1 111 888 999 999 999", () => {
-    //     expect(sayNumbers(BN('1111888999999999'))).to.be.equal("one thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
-    // })
+    it("Expect to be 70000000000000000000", () => {
+        sevenhunth_trillion = new BN('700000000000000000')
+        expect(sayNumbers(sevenhunth_trillion)).to.be.equal("seven hundred thousand trillion")
+    })
     // it("Expect to be 10 111 888 999 999 999", () => {
     //     expect(sayNumbers(10_111_888_999_999_999)).to.be.equal("ten thousand one hundred eleven trillion eight hundred eighty eight billion nine hundred ninety nine million nine hundred ninety nine thousand nine hundred ninety nine")
     // })
