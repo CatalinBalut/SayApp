@@ -29,8 +29,8 @@ sayNumbers = (number) => {
                 : `${rest_of_digits[number - number % 10]} ${single_digits[number % 10]}`);
         case 3:
             return (number % 100 === 0 ? `${single_digits[Math.floor(number / 100) % 10]} ${rest_of_digits[100]}`
-                : (number%100 - number%10 === 0) ? `${single_digits[(number-number%100)/100]} ${rest_of_digits[100]} and ${single_digits[number%10]}`
-                : `${single_digits[Math.floor(number / 100) % 10]} ${rest_of_digits[100]} ${sayNumbers(number % 100)}`);
+                : (number % 100 - number % 10 === 0) ? `${single_digits[(number - number % 100) / 100]} ${rest_of_digits[100]} and ${single_digits[number % 10]}`
+                    : `${single_digits[Math.floor(number / 100) % 10]} ${rest_of_digits[100]} ${sayNumbers(number % 100)}`);
         case 4:
             return (number % 1000 === 0 ?
                 `${single_digits[Math.floor(number / 1000) % 10]} ${rest_of_digits[1000]}`
@@ -81,13 +81,13 @@ sayNumbers = (number) => {
                 : `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 100_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]} ${sayNumbers(number % 1_000_000_000_000)}`);
 
 
-// number - (number%  10**(length-1))        
-                //daca valoare depasste 1000 de trilioane facem string, despartim in 2 si scriem sutele de trilione apoi facem apel la fucntiee
-                //pt nr ce intraa in case
+        // number - (number%  10**(length-1))        
+        //daca valoare depasste 1000 de trilioane facem string, despartim in 2 si scriem sutele de trilione apoi facem apel la fucntiee
+        //pt nr ce intraa in case
         case 16: //nivelu de zeci sute si mii de trilioane
-        return (number % 1_000_000_000_000 === 0 ?
-            `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 1_000_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]}`
-            : `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 1_000_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]} ${sayNumbers(number % 1_000_000_000_000)}`);
+            return (number % 1_000_000_000_000 === 0 ?
+                `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 1_000_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]}`
+                : `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 1_000_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]} ${sayNumbers(number % 1_000_000_000_000)}`);
         case 17:
             return (number % 10_000_000_000_000 === 0 ?
                 `${sayNumbers(Math.floor(number / 1_000_000_000_000) % 10_000_000_000_000_000)} ${rest_of_digits[1_000_000_000_000]}`
