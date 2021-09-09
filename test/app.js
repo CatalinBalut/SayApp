@@ -143,3 +143,99 @@ describe("ALL TESTS", () => {
     })
     
 })
+// Proposed way of writing test descriptions
+// Observation: Two digit numbers that are not uniquely spelled should be separated through " - "
+describe("Titi's tests", function(){
+    describe("Numbers between 0 - 19", function(){
+        it("should say 'zero'", function(){
+            expect(sayNumbers(0)).to.equal("zero");
+        });
+        it("should say 'one'", function(){
+            expect(sayNumbers(1)).to.equal("one");
+        });
+        it("should say 'ten'", function(){
+            expect(sayNumbers(10)).to.equal("ten");
+        });
+        it("should say 'eleven'", function(){
+            expect(sayNumbers(11)).to.equal("eleven");
+        });
+    });
+    describe("Numbers between 20 - 99", function(){
+        it("should say 'twenty'", function(){
+            expect(sayNumbers(20)).to.equal("twenty");
+        });
+        it("should say 'thirty'", function(){
+            expect(sayNumbers(30)).to.equal("thirty");
+        });
+        it("should say 'twenty one'", function(){
+            expect(sayNumbers(21)).to.equal("twenty one");
+        });
+        it("should say 'forty five'", function(){
+            expect(sayNumbers(45)).to.equal("forty five");
+        });
+    });
+    describe("Numbers between 100 - 999", function(){
+        it("should say 'one hundred'", function(){
+            expect(sayNumbers(100)).to.equal("one hundred");
+        });
+        it("should say 'two hundred'", function(){
+            expect(sayNumbers(200)).to.equal("two hundred");
+        });
+        it("should say 'one hundred and one'", function(){
+            expect(sayNumbers(101)).to.equal("one hundred and one");
+        });
+        it("should say 'nine hundred and three", function(){
+            expect(sayNumbers(903)).to.equal("nine hundred and three");
+        });
+        it("should say 'six hundred seventy eight", function(){
+            expect(sayNumbers(678)).to.equal("six hundred seventy eight");
+        });
+        it("should say 'nine hundred fifty three", function(){
+            expect(sayNumbers(953)).to.equal("nine hundred fifty three");
+        })
+    });
+    describe("Numbers between 1000 - 999999", function(){
+        it("should say 'one thousand'", function(){
+            expect(sayNumbers(1000)).to.equal("one thousand");
+        });
+        it("should say 'four thousand'", function(){
+            expect(sayNumbers(4000)).to.equal("four thousand");
+        });
+        it("should say 'ten thousand", function(){
+            expect(sayNumbers(10000)).to.equal("ten thousand");
+        });
+        it("should say 'twenty two thousand", function(){
+            expect(sayNumbers(22000)).to.equal("twenty two thousand");
+        });
+        it("should say 'nine hundred ninety nine thousand nine hundred ninety nine", function(){
+            expect(sayNumbers(999999)).to.equal("nine hundred ninety nine thousand nine hundred ninety nine");
+        });
+    });
+    describe("Numbers between 1000000 - 999999999", function(){
+        it("should say 'one million'", function(){
+            expect(sayNumbers(1000000)).to.equal("one million");
+        });
+        it("should say 'one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine", function(){
+            expect(sayNumbers(123456789)).to.equal("one hundred twenty three million four hundred fifty six thousand seven hundred eighty nine");
+        });
+    });
+    describe("Numbers between 1000000000 - 999999999999", function(){
+        it("should say 'one billion'", function(){
+            expect(sayNumbers(1000000000)).to.equal("one billion");
+        });
+        it("should say 'one billion and one'", function(){
+            expect(sayNumbers(1000000001)).to.equal("one billion and one");
+        });
+        it("should say 'two hundred forty six billion one hundred thirty five million nine hundred eighty seven thousand one hundred eleven", function(){
+            expect(sayNumbers(246135987111)).to.equal("two hundred forty six billion one hundred thirty five million nine hundred eighty seven thousand one hundred eleven");
+        });
+    });
+    describe("Numbers between 1000000000000 - 999999999999999", function(){
+        it("should say 'one trillion'", function(){
+            expect(sayNumbers(1000000000000)).to.equal("one trillion");
+        });
+        it("should say 'five hundred and five trillion four hundred and four billion three hundred and three million two hundred and two thousand one hundred and one", function(){
+            expect(sayNumbers(505404303202101)).to.equal("five hundred and five trillion four hundred and four billion three hundred and three million two hundred and two thousand one hundred and one");
+        });
+    });
+});
